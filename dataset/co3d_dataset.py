@@ -25,7 +25,7 @@ import torch
 import pytorch3d
 from pytorch3d.renderer.cameras import CamerasBase, PerspectiveCameras
 from pytorch3d.structures.pointclouds import Pointclouds
-from tools.camera_utils import assert_pytorch3d_has_new_ndc_convention
+from ..tools.camera_utils import assert_pytorch3d_has_new_ndc_convention
 
 from . import types
 
@@ -296,9 +296,7 @@ class Co3dDataset(torch.utils.data.Dataset):
 
     def seq_frame_index_to_dataset_index(
         self,
-        seq_frame_index: Union[
-            List[List[Union[Tuple[str, int, str], Tuple[str, int]]]],
-        ],
+        seq_frame_index: List[List[Union[Tuple[str, int, str], Tuple[str, int]]]],
     ):
         """
         Obtain indices into the dataset object given a list of frames specified as
