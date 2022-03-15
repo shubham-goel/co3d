@@ -11,10 +11,10 @@ import torch
 from pytorch3d.renderer.cameras import CamerasBase
 from pytorch3d.structures import Pointclouds
 
-from dataset.utils import is_known_frame
-from evaluation.evaluate_new_view_synthesis import NewViewSynthesisPrediction
-from tools.camera_utils import select_cameras
-from tools.point_cloud_utils import get_rgbd_point_cloud, render_point_cloud_pytorch3d
+from ..dataset.utils import is_known_frame
+from ..evaluation.evaluate_new_view_synthesis import NewViewSynthesisPrediction
+from ..tools.camera_utils import select_cameras
+from ..tools.point_cloud_utils import get_rgbd_point_cloud, render_point_cloud_pytorch3d
 
 
 class ModelDBIR(torch.nn.Module):

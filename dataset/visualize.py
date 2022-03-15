@@ -14,7 +14,7 @@ from visdom import Visdom
 from dataset.co3d_dataset import Co3dDataset, FrameData
 
 from pytorch3d.structures import Pointclouds
-from tools.point_cloud_utils import get_rgbd_point_cloud
+from ..tools.point_cloud_utils import get_rgbd_point_cloud
 
 
 def get_co3d_sequence_pointcloud(

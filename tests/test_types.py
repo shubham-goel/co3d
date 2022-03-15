@@ -9,8 +9,8 @@ import dataclasses
 from typing import Dict, List, NamedTuple, Tuple
 import unittest
 
-from dataset import types
-from dataset.types import FrameAnnotation
+from ..dataset import types
+from ..dataset.types import FrameAnnotation
 
 
 class TestDatasetTypes(unittest.TestCase):

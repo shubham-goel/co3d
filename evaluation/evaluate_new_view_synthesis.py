@@ -17,15 +17,15 @@ from tabulate import tabulate
 import torch
 import pdb
 
-from dataset.co3d_dataset import FrameData
-from dataset.utils import is_known_frame, is_train_frame
-from tools.camera_utils import (
+from ..dataset.co3d_dataset import FrameData
+from ..dataset.utils import is_known_frame, is_train_frame
+from ..tools.camera_utils import (
     select_cameras,
     concatenate_cameras,
     volumetric_camera_overlaps,
 )
-from tools.image_utils import mask_background
-from tools.metric_utils import iou, calc_psnr, rgb_l1, eval_depth
+from ..tools.image_utils import mask_background
+from ..tools.metric_utils import iou, calc_psnr, rgb_l1, eval_depth
 
 EVAL_N_SRC_VIEWS = [1, 3, 5, 7, 9]
 

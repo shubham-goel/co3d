@@ -15,12 +15,12 @@ import copy
 import numpy as np
 import lpips
 
-from dataset.co3d_dataset import Co3dDataset, FrameData
-from dataset.dataset_zoo import DATASET_ROOT
-from tools.utils import dataclass_to_cuda_
-from evaluation.evaluate_new_view_synthesis import eval_batch
-from tools.metric_utils import calc_psnr, eval_depth
-from models.model_dbir import ModelDBIR
+from ..dataset.co3d_dataset import Co3dDataset, FrameData
+from ..dataset.dataset_zoo import DATASET_ROOT
+from ..tools.utils import dataclass_to_cuda_
+from ..evaluation.evaluate_new_view_synthesis import eval_batch
+from ..tools.metric_utils import calc_psnr, eval_depth
+from ..models.model_dbir import ModelDBIR
 
 
 class TestEvaluation(unittest.TestCase):

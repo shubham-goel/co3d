@@ -16,15 +16,15 @@ import torch
 from tqdm import tqdm
 import lpips
 
-from dataset.co3d_dataset import FrameData, Co3dDataset
-from dataset.dataset_zoo import CO3D_CATEGORIES, dataset_zoo
-from dataset.dataloader_zoo import dataloader_zoo
-from dataset.utils import is_known_frame
-from models.model_dbir import ModelDBIR
-from tools.utils import dataclass_to_cuda_
-from tools.camera_utils import select_cameras
+from .dataset.co3d_dataset import FrameData, Co3dDataset
+from .dataset.dataset_zoo import CO3D_CATEGORIES, dataset_zoo
+from .dataset.dataloader_zoo import dataloader_zoo
+from .dataset.utils import is_known_frame
+from .models.model_dbir import ModelDBIR
+from .tools.utils import dataclass_to_cuda_
+from .tools.camera_utils import select_cameras
 
-from evaluation.evaluate_new_view_synthesis import (
+from .evaluation.evaluate_new_view_synthesis import (
     eval_batch,
     summarize_nvs_eval_results,
     aggregate_nvs_results,
@@ -96,7 +96,8 @@ def evaluate_dbir_for_category(
         category_result: A dictionary of quantitative metrics.
     """
 
-    torch.manual_seed(42)
+    from pytorch_lightning import seed_everything
+    seed_everything(42, workers=True)
 
     if task not in ["multisequence", "singlesequence"]:
         raise ValueError(f"'task' has to be either 'multisequence' or 'singlesequence'")

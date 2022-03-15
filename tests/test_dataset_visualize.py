@@ -7,17 +7,17 @@
 
 import os
 import unittest
+
 import torch
 import torchvision
-
+from pytorch3d.vis.plotly_vis import plot_scene
 from visdom import Visdom
 
-from dataset.co3d_dataset import Co3dDataset
-from dataset.visualize import get_co3d_sequence_pointcloud
-from dataset.dataset_zoo import DATASET_ROOT
-from tools.camera_utils import select_cameras
-from tools.point_cloud_utils import render_point_cloud_pytorch3d
-from pytorch3d.vis.plotly_vis import plot_scene
+from ..dataset.co3d_dataset import Co3dDataset
+from ..dataset.dataset_zoo import DATASET_ROOT
+from ..dataset.visualize import get_co3d_sequence_pointcloud
+from ..tools.camera_utils import select_cameras
+from ..tools.point_cloud_utils import render_point_cloud_pytorch3d
 
 
 class TestDatasetVisualize(unittest.TestCase):
